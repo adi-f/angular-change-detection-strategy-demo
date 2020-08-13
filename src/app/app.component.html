@@ -1,7 +1,11 @@
 <h1>Change Detection Demo</h1>
 
 <div>Counter = {{counter}}</div>
-<div><button (click)="increment()">Increment</button></div>
+<div>
+  <button (click)="increment()">Increment</button>
+  <button (click)="autoIncrement()">Auto Increment</button>
+</div>
 
 <with-async [counter$]="counter$"></with-async>
-<with-subscribe [counter$]="counter$"> ></with-subscribe>
+<with-subscribe [counter$]="counter$"></with-subscribe>
+<with-subscribe-onpush [counter$]="counter$"></with-subscribe-onpush>

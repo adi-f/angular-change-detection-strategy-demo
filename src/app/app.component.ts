@@ -1,5 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { Subject, BehaviorSubject, ReplaySubject } from 'rxjs';
 
 @Component({
   selector: 'my-app',
@@ -7,9 +7,13 @@ import { Subject, BehaviorSubject } from 'rxjs';
 })
 export class AppComponent  {
   counter: number = 1; 
-  readonly counter$: Subject<number> = new BehaviorSubject(this.counter);
+  readonly counter$: Subject<number> = new ReplaySubject(1);
 
   increment(): void {
     this.counter$.next(this.counter++);
+  }
+
+  autoIncrement(): void {
+    setInterval(() => this.counter$.next(this.counter++), 1000);
   }
 }
