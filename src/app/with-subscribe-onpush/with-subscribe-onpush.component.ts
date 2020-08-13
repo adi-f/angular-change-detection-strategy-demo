@@ -2,11 +2,11 @@ import { Component, OnInit, OnDestroy, Input, ChangeDetectionStrategy } from '@a
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
-  selector: 'with-subscribe',
-  templateUrl: './with-subscribe.component.html',
-  changeDetection: ChangeDetectionStrategy.Default
+  selector: 'with-subscribe-onpush',
+  templateUrl: './with-subscribe-onpush.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WithSubscribeComponent implements OnInit, OnDestroy {
+export class WithSubscribeOnpushComponent implements OnInit, OnDestroy {
 
   @Input() counter$: Observable<number>;
   counter: number = 0;
@@ -19,4 +19,5 @@ export class WithSubscribeComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
 }
