@@ -17,17 +17,18 @@ export class AppComponent implements OnDestroy {
     this.counter$.next(++this.counter);
   }
 
-  autoIncrement(): void {
+  startAutoIncrement(): void {
+    this.stopAutoIncrement();
     this.setIntervalHandle = setInterval(() => this.counter$.next(++this.counter), 1000);
   }
 
-  private stopInterval(): void {
+  stopAutoIncrement(): void {
     if(this.setIntervalHandle) {
       clearInterval(this.setIntervalHandle);
     }
   }
 
   ngOnDestroy(): void {
-    this.stopInterval();
+    this.stopAutoIncrement();
   }
 }

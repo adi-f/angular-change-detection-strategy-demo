@@ -3,7 +3,8 @@
 <div>Counter = {{counter}}</div>
 <div>
   <button (click)="increment()">Increment</button>
-  <button (click)="autoIncrement()">Auto Increment</button>
+  <button (click)="startAutoIncrement()">Auto Increment</button>
+  <button (click)="stopAutoIncrement()">Stop Increment</button>
 </div>
 
 <with-async [counter$]="counter$"></with-async>
