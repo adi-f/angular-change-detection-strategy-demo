@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { WithAsyncComponent } from './with-async/with-async.component';
 import { WithSubscribeComponent } from './with-subscribe/with-subscribe.component';
 import { WithSubscribeOnpushComponent } from './with-subscribe-onpush/with-subscribe-onpush.component';
+import { WithAsyncSideeffectComponent } from './with-async-sideeffect/with-async-sideeffect.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, WithAsyncComponent, WithSubscribeComponent, WithSubscribeOnpushComponent ],
+  declarations: [ AppComponent, WithAsyncComponent, WithSubscribeComponent, WithSubscribeOnpushComponent, WithAsyncSideeffectComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
